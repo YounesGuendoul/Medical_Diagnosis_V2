@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Historical Chatbot Interactions</title>
+</head>
+<body>
+    <h1>Historical Chatbot Interactions</h1>
+    <table>
+        <tr>
+            <th>Timestamp</th>
+            <th>User</th>
+            <th>Interaction Data</th>
+        </tr>
+        {% for interaction in interactions %}
+        <tr>
+            <td>{{ interaction.timestamp }}</td>
+            <td>{{ interaction.user }}</td>
+            <td>{{ interaction.interaction_data }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

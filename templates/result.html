@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prediction Result</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<h1 class="result_h1">Prediction Result</h1>
+	<div class="result_div">
+		<p>The predicted disease is : {{ prediction }}</p>
+		<p>The precision value of the prediction : {{ percentage }} %</p>
+	</div>
+</body>
+</html>
