@@ -9,6 +9,7 @@ contract ChatbotInteractionContract {
         uint timestamp;
         address user;
         string interactionData;
+        bytes32 encryptedInteractionData;
     }
     
     // An array to store chatbot interactions
@@ -33,15 +34,15 @@ contract ChatbotInteractionContract {
     }
 
     // Add an interaction to the contract
-    function addInteraction(string memory _interactionData) public onlyAuthorized {
+    function addInteraction(bytes32 _encryptedInteractionData) public onlyAuthorized {
         ChatbotInteraction memory newInteraction;
         newInteraction.timestamp = block.timestamp;
         newInteraction.user = msg.sender;
-        newInteraction.interactionData = _interactionData;
+        newInteraction.encryptedInteractionData = _encryptedInteractionData;
 
         chatbotInteractions.push(newInteraction);
 
-        emit InteractionAdded(chatbotInteractions.length - 1, msg.sender, _interactionData);
+        emit InteractionAdded(chatbotInteractions.length - 1, msg.sender, "Encrypted Data");
     }
 
     // Get the total number of interactions
