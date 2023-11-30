@@ -1,7 +1,7 @@
 from web3 import Web3
 
 w3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/623b6ab0286a4952a6247eb9b38ee288"))
-contract_address = "0x792680aB363fe46644D5315Befd111A1DaDE948B"
+contract_address = "0x792680aB"
 contract_abi = [
 	{
 		"inputs": [
